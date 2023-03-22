@@ -35,8 +35,8 @@ const loadUserName = () => {
     }
 }
 
-const init1 = () => {
+const initFn = () => {
     loadUserName()
 }
 
-init1()
+initFn()
