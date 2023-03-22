@@ -1,15 +1,10 @@
 body {
     background-color: white;
+    color: #34495e;
 }
 
 .btn {
     cursor: pointer;
-}
-
-
-h1 {
-    color: #34495e;
-    transition: .5s ease-in-out;
 }
 
 .clicked {

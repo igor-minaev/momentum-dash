@@ -4,6 +4,10 @@ const greetings = document.querySelector('.js-greetings')
 const USER_LS = 'currentUserName'
 const SHOWING_CN = 'showing'
 
+const saveUserName = (text) => {
+    localStorage.setItem(USER_LS, text)
+}
+
 const showGreetings = (text) => {
     greetings.innerText = `Hello, ${text}`
     greetings.classList.add(SHOWING_CN)
@@ -12,6 +16,9 @@ const showGreetings = (text) => {
 
 const submitHandler = (e) => {
     e.preventDefault()
+    const currentValue = input.value
+    showGreetings(currentValue)
+    saveUserName(currentValue)
 }
 
 const askForUserName = () => {
@@ -22,14 +29,14 @@ const askForUserName = () => {
 const loadUserName = () => {
     const currentUserName = localStorage.getItem(USER_LS)
     if (currentUserName === null) {
-
+        askForUserName()
     } else {
         showGreetings(currentUserName)
     }
 }
 
-const init = () => {
+const init1 = () => {
     loadUserName()
 }
 
-init()
+init1()
